@@ -9,8 +9,7 @@
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ball1" />
+        android:src="@drawable/ball01" />
 
     <Button
         android:id="@+id/button1"
@@ -25,16 +24,36 @@
         android:textStyle="italic|bold"
         android:typeface="serif" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
         android:layout_alignParentLeft="true"
-        android:gravity="center_horizontal"
-        android:shadowColor="@android:color/white"
-        android:shadowRadius="10"
-        android:textColor="@android:color/white"
-        android:textSize="32sp" />
+        android:layout_centerVertical="true"
+        android:weightSum="1" >
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.2" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:gravity="center_horizontal"
+            android:shadowColor="@android:color/white"
+            android:shadowRadius="10"
+            android:textColor="@android:color/white"
+            android:textSize="32sp" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.2" />
+
+    </LinearLayout>
 
 </RelativeLayout>

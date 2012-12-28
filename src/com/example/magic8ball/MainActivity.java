@@ -1,10 +1,12 @@
 package com.example.magic8ball;
 
 import android.app.Activity;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -25,10 +27,22 @@ public class MainActivity extends Activity {
 				String answer = mMagicBall.getAnAnswer();
 				
 				answerLabel.setText(answer);
+				
+				animateMagic8Ball();
 			}
 		});
 	}
 
+	private void animateMagic8Ball() {
+		ImageView magicBallImage = (ImageView) findViewById(R.id.imageView1);
+		magicBallImage.setImageResource(R.drawable.ball_animation);
+		AnimationDrawable ballAnimation = (AnimationDrawable) magicBallImage.getDrawable();
+		if (ballAnimation.isRunning()) {
+		ballAnimation.stop();
+		}
+		ballAnimation.start();
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

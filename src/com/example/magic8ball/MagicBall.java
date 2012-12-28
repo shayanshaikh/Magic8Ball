@@ -8,11 +8,11 @@ public class MagicBall {
 			"It is certain", 
 			"It is plausible",
 			"All signs say YES!", 
-			"The stars are aligned",
+			"The stars are not aligned",
 			"My reply is no", 
 			"It is doubtful",
 			"Better not tell you now", 
-			"Ask again",
+			"Concentrate and Ask again",
 			"I don't understand?" };
 	
 	// Methods (abilities: things the object can do)
