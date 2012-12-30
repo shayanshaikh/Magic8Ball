@@ -1,4 +1,4 @@
-package com.shayanshaikh.crystalball;
+package com.example.magic8ball;
 
 import android.app.Activity;
 import android.graphics.drawable.AnimationDrawable;
@@ -13,8 +13,7 @@ import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.shayanshaikh.crystalball.R;
-import com.shayanshaikh.crystalball.ShakeDetector.OnShakeListener;
+import com.example.magic8ball.ShakeDetector.OnShakeListener;
 
 public class MainActivity extends Activity {
 	
