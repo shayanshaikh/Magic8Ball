@@ -11,6 +11,19 @@
         android:layout_height="match_parent"
         android:src="@drawable/ball01" />
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_horizontal"
+        android:text="Touch If You Dare!"
+        android:textColor="#ff1300"
+        android:textSize="24sp"
+        android:textStyle="italic|bold"
+        android:typeface="serif" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
