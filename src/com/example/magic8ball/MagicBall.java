@@ -1,4 +1,4 @@
-package com.shayanshaikh.crystalball;
+package com.example.magic8ball;
 
 import java.util.Random;
 

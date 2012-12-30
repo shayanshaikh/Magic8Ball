@@ -1,5 +1,5 @@
 /** Automatically generated file. DO NOT MODIFY */
-package com.shayanshaikh.crystalball;
+package com.example.magic8ball;
 
 public final class BuildConfig {
     public final static boolean DEBUG = true;

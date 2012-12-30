@@ -1,4 +1,4 @@
-package com.shayanshaikh.crystalball;
+package com.example.magic8ball;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
