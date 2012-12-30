@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.example.magic8ball;
+package com.shayanshaikh.crystalball;
 
 public final class R {
     public static final class attr {
@@ -37,9 +37,10 @@ public final class R {
         public static final int ball23=0x7f020017;
         public static final int ball24=0x7f020018;
         public static final int ball_animation=0x7f020019;
-        public static final int ic_launcher=0x7f02001a;
-        public static final int images2=0x7f02001b;
-        public static final int images3=0x7f02001c;
+        public static final int crystal_ball=0x7f02001a;
+        public static final int ic_launcher=0x7f02001b;
+        public static final int images2=0x7f02001c;
+        public static final int images3=0x7f02001d;
     }
     public static final class id {
         public static final int imageView1=0x7f080000;
