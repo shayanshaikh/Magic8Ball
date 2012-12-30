@@ -7,7 +7,6 @@ import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
@@ -16,8 +15,6 @@ import android.widget.TextView;
 import com.example.magic8ball.ShakeDetector.OnShakeListener;
 
 public class MainActivity extends Activity {
-	
-	public static final String TAG = MainActivity.class.getSimpleName();
 
 	private MagicBall mMagicBall = new MagicBall();
 	private TextView mAnswerLabel;
@@ -45,9 +42,6 @@ public class MainActivity extends Activity {
 			}
 		});
 		
-		//Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_LONG).show();
-		
-		Log.d(TAG, "We're logging from the onCreate() method!");
 	}
 	@Override
 	public void onResume() {
