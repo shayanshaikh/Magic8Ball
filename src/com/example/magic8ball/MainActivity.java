@@ -2,22 +2,26 @@ package com.example.magic8ball;
 
 import android.app.Activity;
 import android.graphics.drawable.AnimationDrawable;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.View;
 import android.view.animation.AlphaAnimation;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.magic8ball.ShakeDetector.OnShakeListener;
 
 public class MainActivity extends Activity {
 
 	private MagicBall mMagicBall = new MagicBall();
 	private TextView mAnswerLabel;
-	private Button mGetAnswerButton;
 	private ImageView mMagicBallImage;
+	private SensorManager mSensorManager;
+	private Sensor mAccelerometer;
+	private ShakeDetector mShakeDetector;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -26,21 +30,31 @@ public class MainActivity extends Activity {
 		
 		//Assign the views from the layout file
 		mAnswerLabel = (TextView) findViewById(R.id.textView1);
-		mGetAnswerButton = (Button) findViewById(R.id.button1);
 		mMagicBallImage = (ImageView) findViewById(R.id.imageView1);
 		
-		mGetAnswerButton.setOnClickListener(new View.OnClickListener() {
+		mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+		mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+		mShakeDetector = new ShakeDetector(new OnShakeListener() {
 			
-			public void onClick(View arg0) {
-				String answer = mMagicBall.getAnAnswer();
+			@Override
+			public void onShake() {
+				handleNewAnswer();
 				
-				mAnswerLabel.setText(answer);
-				
-				animateMagic8Ball();
-				animateAnswer();
-				playSound();
 			}
 		});
+	}
+	
+	@Override
+	public void onResume() {
+		super.onResume();
+		mSensorManager.registerListener(mShakeDetector, mAccelerometer, 
+				SensorManager.SENSOR_DELAY_UI);
+	}
+	
+	@Override
+	public void onPause() {
+		super.onPause();
+		mSensorManager.unregisterListener(mShakeDetector);
 	}
 
 	private void animateMagic8Ball() {
@@ -79,4 +93,14 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	private void handleNewAnswer() {
+		String answer = mMagicBall.getAnAnswer();
+		
+		mAnswerLabel.setText(answer);
+		
+		animateMagic8Ball();
+		animateAnswer();
+		playSound();
+	}
+	
 }
