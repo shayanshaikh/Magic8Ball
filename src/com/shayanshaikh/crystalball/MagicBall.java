@@ -13,7 +13,24 @@ public class MagicBall {
 			"It is doubtful",
 			"Better not tell you now", 
 			"Concentrate and Ask again",
-			"I don't understand?" };
+			"I don't understand?",
+			"Yes",
+			"No",
+			"Nah Bro",
+			"Sure Bro",
+			"What did you say?",
+			"Woah Bro I don't wanna answer that",
+			"That is unlikely",
+			"The truth is within you",
+			"The truth will be revealed in time",
+			"Ouucchhh, What's with the shaking?",
+			"The things you tell me...",
+			"Well, umm....            Huh?",
+			"You could say so",
+			"I'm not really sure",
+			"You could be onto something",
+			"On the advice of my counsel I herby I invoke my right under the Fifth Amendment not to answer"
+	};
 	
 	// Methods (abilities: things the object can do)
 	public String getAnAnswer() { 
